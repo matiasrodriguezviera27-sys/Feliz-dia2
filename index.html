@@ -42,7 +42,6 @@ font-family:'Great Vibes',cursive;
 color:#e76a8a;
 }
 
-/* BOTON */
 .btn{
 margin-top:20px;
 display:inline-block;
@@ -66,7 +65,6 @@ font-size:55px;
 color:#e76a8a;
 }
 
-/* CONTADOR */
 .counter{
 text-align:center;
 font-size:18px;
@@ -140,12 +138,22 @@ opacity:0;
 }
 }
 
+/* QR */
+.qr{
+text-align:center;
+margin-top:40px;
+}
+
+.qr h2{
+color:#e76a8a;
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- CARTA INICIAL -->
+<!-- CARTA -->
 <div class="overlay" id="overlay">
   <div class="carta">
     <h1>💌 Para vos</h1>
@@ -181,16 +189,43 @@ opacity:0;
   <div class="frases">
     <p>❤️ Cada día a tu lado es mi lugar favorito.</p>
     <p>❤️ No hay palabras suficientes para lo que siento por vos.</p>
-    <p>❤️ Gracias por estar siempre.</p>
+    <p>❤️ Gracias por todo tu amor.</p>
     <p>❤️ Te quiero muchísimo.</p>
   </div>
 
 </div>
 
+<!-- QR -->
+<div class="qr">
+  <h2>Escaneá para abrir la página 📱</h2>
+  <div id="qrcode"></div>
+  <p style="color:#666">https://feliz-dia2.vercel.app/</p>
 </div>
 
-<!-- CORAZONES GENERADOR -->
+</div>
+
+<!-- LIBRERIA QR -->
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+
 <script>
+
+/* QR */
+new QRCode(document.getElementById("qrcode"), {
+  text: "https://feliz-dia2.vercel.app/",
+  width: 180,
+  height: 180,
+  colorDark: "#000",
+  colorLight: "#fff",
+  correctLevel: QRCode.CorrectLevel.H
+});
+
+/* CARTA */
+function abrir(){
+document.getElementById("overlay").style.display = "none";
+document.getElementById("musica").play();
+}
+
+/* CORAZONES */
 function crearCorazon(){
 const heart = document.createElement("div");
 heart.classList.add("heart");
@@ -201,17 +236,10 @@ document.body.appendChild(heart);
 
 setTimeout(() => heart.remove(), 5000);
 }
-
 setInterval(crearCorazon, 300);
 
-/* ABRIR CARTA */
-function abrir(){
-document.getElementById("overlay").style.display = "none";
-document.getElementById("musica").play();
-}
-
-/* CONTADOR DE RELACIÓN */
-const inicio = new Date("2023-01-01"); // 👈 CAMBIA ESTA FECHA
+/* CONTADOR */
+const inicio = new Date("2023-01-01"); // CAMBIAR FECHA
 const counter = document.getElementById("counter");
 
 function actualizar(){
@@ -224,6 +252,7 @@ counter.innerHTML = `❤️ Llevamos ${dias} días juntos`;
 
 actualizar();
 setInterval(actualizar, 86400000);
+
 </script>
 
 </body>

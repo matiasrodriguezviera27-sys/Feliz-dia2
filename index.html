@@ -1,187 +1,341 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Feliz día, mi amor</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<title>Feliz día, BeBe ❤️</title>
 
-  <style>
-    :root{
-      --pink:#f9d5d5;
-      --peach:#fbd5cc;
-      --text:#333;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    *{
-      box-sizing:border-box;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
-    body{
-      margin:0;
-      font-family: Montserrat, Arial, sans-serif;
-      color:var(--text);
-      background:#fff;
-    }
+<style>
 
-    .hero{
-      text-align:center;
-      padding:28px 16px;
-      background:linear-gradient(#fff 0%, #fbe8ee 100%);
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-    .hero .title{
-      font-family:'Great Vibes', cursive;
-      font-size:44px;
-      color:#e26a88;
-      margin:8px 0 6px;
-    }
+body{
 
-    .section{
-      padding:18px 20px;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap:14px;
-    }
+font-family:Montserrat,sans-serif;
 
-    .card{
-      width:100%;
-      max-width:1000px;
-      text-align:left;
-      background:#fff;
-      border-radius:14px;
-      padding:16px;
-      box-shadow:0 4px 12px rgba(0,0,0,.05);
-      border:1px solid #f3e6e6;
-    }
+background:linear-gradient(180deg,#fff,#fdeff4);
 
-    .profile-row{
-      display:flex;
-      justify-content:center;
-      align-items:flex-start;
-      gap:20px;
-      flex-wrap:wrap;
-      margin-top:20px;
-    }
+color:#444;
 
-    .profile-row img{
-      width:100%;
-      max-width:420px;
-      height:auto;
-      border-radius:16px;
-      border:4px solid #fff;
-      box-shadow:0 6px 14px rgba(0,0,0,.15);
-      display:block;
-    }
+}
 
-    .qr-block{
-      text-align:center;
-      padding:12px 0;
-    }
+.hero{
 
-    .btn{
-      display:inline-block;
-      padding:10px 14px;
-      background:#e76a8a;
-      color:#fff;
-      border-radius:999px;
-      text-decoration:none;
-      font-weight:600;
-    }
+padding:35px;
 
-    @media (max-width:768px){
+text-align:center;
 
-      .profile-row{
-        gap:12px;
-      }
+}
 
-      .profile-row img{
-        max-width:45%;
-      }
+.hero h1{
 
-      .hero .title{
-        font-size:36px;
-      }
+font-family:'Great Vibes',cursive;
 
-    }
+font-size:60px;
 
-    @media (max-width:500px){
+color:#e76a8a;
 
-      .profile-row img{
-        max-width:100%;
-      }
+}
 
-    }
+.hero p{
 
-  </style>
+margin-top:10px;
+
+font-size:20px;
+
+color:#666;
+
+}
+
+.contenedor{
+
+width:95%;
+
+max-width:1300px;
+
+margin:auto;
+
+padding:30px;
+
+}
+
+.card{
+
+background:white;
+
+border-radius:20px;
+
+box-shadow:0 8px 25px rgba(0,0,0,.1);
+
+padding:25px;
+
+}
+
+.flex{
+
+display:flex;
+
+gap:35px;
+
+align-items:center;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+}
+
+.fotos{
+
+flex:1;
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+.fotos img{
+
+width:320px;
+
+max-width:100%;
+
+height:auto;
+
+border-radius:18px;
+
+border:5px solid white;
+
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+transition:.3s;
+
+}
+
+.fotos img:hover{
+
+transform:scale(1.04);
+
+}
+
+.frases{
+
+flex:1;
+
+font-size:20px;
+
+line-height:1.9;
+
+}
+
+.frases p{
+
+margin-bottom:18px;
+
+}
+
+.frases span{
+
+font-size:28px;
+
+}
+
+.qr{
+
+margin-top:45px;
+
+text-align:center;
+
+}
+
+.qr h2{
+
+margin-bottom:20px;
+
+color:#e76a8a;
+
+}
+
+.btn{
+
+display:inline-block;
+
+margin-top:15px;
+
+padding:12px 22px;
+
+background:#e76a8a;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:30px;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+.btn:hover{
+
+background:#d45778;
+
+}
+
+@media(max-width:850px){
+
+.hero h1{
+
+font-size:48px;
+
+}
+
+.flex{
+
+flex-direction:column;
+
+}
+
+.frases{
+
+font-size:18px;
+
+text-align:center;
+
+}
+
+.fotos img{
+
+width:45%;
+
+}
+
+}
+
+@media(max-width:500px){
+
+.fotos img{
+
+width:100%;
+
+}
+
+.hero h1{
+
+font-size:40px;
+
+}
+
+}
+
+</style>
+
 </head>
 
 <body>
 
-<header class="hero">
-  <div class="title">Feliz día, BeBe</div>
-  <p style="color:#666;margin:6px 0 0;">Una pequeña sorpresa para ti</p>
-</header>
+<div class="hero">
 
-<main>
+<h1>Feliz día, BeBe ❤️</h1>
 
-<section class="section">
+<p>Una pequeña sorpresa para ti</p>
+
+</div>
+
+<div class="contenedor">
 
 <div class="card">
 
-<p style="text-align:center;">
-Contenido personalizado con tus frases o mensajes.
+<div class="flex">
+
+<div class="fotos">
+
+<img src="Verónica/vero01.jpeg">
+
+<img src="Verónica/vero02.jpeg">
+
+</div>
+
+<div class="frases">
+
+<p>❤️ Cada día a tu lado es mi lugar favorito.</p>
+
+<p>❤️ No hay palabras suficientes para explicar lo importante que sos en mi vida.</p>
+
+<p>❤️ Gracias por cada momento, por cada sonrisa, por tu amor incondicional y por estar siempre a mi lado.</p>
+
+<p>❤️ Gracias por estar conmigo y ayudarme, te quiero muchísimo.</p>
+
+<p>❤️ Gracias por hacer mi vida más bonita, por elegirme y por construir juntos nuestros sueños.</p>
+
+</div>
+
+</div>
+<div class="qr">
+
+<h2>Escanea para abrir la página 📱</h2>
+
+<div id="qrcode"></div>
+
+<p style="margin-top:15px;color:#666;">
+O abrí la página desde tu celular:
 </p>
 
-<div class="profile-row">
-<img src="Verónica/vero01.jpeg" alt="Foto 1">
-<img src="Verónica/vero02.jpeg" alt="Foto 2">
-</div>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<div class="card" style="text-align:center;">
-
-<h3>Escanea para abrir la página</h3>
-
-<div class="qr-block" id="qrcode"></div>
-
-<p style="font-size:.9em;color:#666;">
-O abre la URL en tu móvil:
+<p>
 <a href="https://feliz-dia2.vercel.app/" target="_blank">
 https://feliz-dia2.vercel.app/
 </a>
 </p>
 
-<a class="btn"
-href="https://feliz-dia2.vercel.app/"
-target="_blank">
+<a class="btn" href="https://feliz-dia2.vercel.app/" target="_blank">
 Abrir página
 </a>
 
 </div>
 
-</section>
+</div>
 
-</main>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
 
 <script>
+
 new QRCode(document.getElementById("qrcode"),{
+
 text:"https://feliz-dia2.vercel.app/",
+
 width:180,
-height:180
+
+height:180,
+
+colorDark:"#000000",
+
+colorLight:"#ffffff",
+
+correctLevel:QRCode.CorrectLevel.H
+
 });
+
 </script>
 
 </body>
+
 </html>

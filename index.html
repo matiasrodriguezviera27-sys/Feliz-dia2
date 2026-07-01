@@ -121,6 +121,36 @@ font-size:18px;
 line-height:1.7;
 }
 
+/* FIRMA ANIMADA */
+.firma{
+margin-top:25px;
+text-align:center;
+opacity:0;
+animation:aparecer 2s ease forwards;
+}
+
+.corazonFirma{
+font-size:28px;
+font-weight:bold;
+animation:latido 1.2s infinite;
+}
+
+.textoFirma{
+font-family:'Great Vibes', cursive;
+font-size:26px;
+color:#e76a8a;
+margin-top:5px;
+}
+
+@keyframes aparecer{
+to{opacity:1;}
+}
+
+@keyframes latido{
+0%,100%{transform:scale(1);}
+50%{transform:scale(1.15);}
+}
+
 /* CORAZONES */
 .heart{
 position:fixed;
@@ -187,10 +217,18 @@ color:#e76a8a;
   </div>
 
   <div class="frases">
+
     <p>❤️ Cada día a tu lado es mi lugar favorito.</p>
     <p>❤️ No hay palabras suficientes para lo que siento por vos.</p>
     <p>❤️ Gracias por todo tu amor.</p>
     <p>❤️ Te quiero muchísimo.</p>
+
+    <!-- FIRMA -->
+    <div class="firma">
+      <div class="corazonFirma">❤️ Vero + Mati ❤️</div>
+      <div class="textoFirma">Te quiero</div>
+    </div>
+
   </div>
 
 </div>
@@ -239,7 +277,7 @@ setTimeout(() => heart.remove(), 5000);
 setInterval(crearCorazon, 300);
 
 /* CONTADOR */
-const inicio = new Date("2026-02-01"); // CAMBIAR FECHA
+const inicio = new Date("2026-02-01");
 const counter = document.getElementById("counter");
 
 function actualizar(){

@@ -17,7 +17,7 @@ background: linear-gradient(180deg, #ffe6f0, #fff0f5);
 overflow-x:hidden;
 }
 
-/* OCULTAR CONTENIDO HASTA ABRIR CARTA */
+/* OCULTAR CONTENIDO */
 .hidden{
 display:none;
 }
@@ -199,12 +199,12 @@ color:#e76a8a;
   </div>
 </div>
 
-<!-- MUSICA -->
-<audio id="musica" loop>
-  <source src="musica.mp3" type="audio/mpeg">
-</audio>
+<!-- 🎵 MÚSICA (MP4 USADO COMO VIDEO OCULTO) -->
+<video id="musica" loop playsinline style="display:none;">
+  <source src="la_unica.mp4" type="video/mp4">
+</video>
 
-<!-- CONTENIDO (OCULTO AL INICIO) -->
+<!-- CONTENIDO -->
 <div id="contenido" class="hidden">
 
 <!-- HERO -->
@@ -228,14 +228,14 @@ color:#e76a8a;
 
   <div class="frases">
 
-    <p>❤️ Cada díaque estoy contigo es mi lugar favorito.</p>
-    <p>❤️ No hay palabras suficientes para describir lo q siento por ti aveces.</p>
-    <p>❤️ Gracias por cada momento,por cada sonrisa,por tu amor incondicional y por apoyarme siempre.</p>
+    <p>❤️ Cada día que estoy contigo es mi lugar favorito.</p>
+    <p>❤️ No hay palabras suficientes para describir lo que siento por ti a veces.</p>
+    <p>❤️ Gracias por cada momento, por cada sonrisa, por tu amor incondicional y por apoyarme siempre.</p>
     <p>❤️ Te quiero muchísimo.</p>
 
     <!-- FIRMA -->
     <div class="firma">
-      <div class="corazonFirma">Vero ❤️ Mati</div>
+      <div class="corazonFirma">❤️ Vero + Mati ❤️</div>
       <div class="textoFirma">Te quiero</div>
     </div>
 
@@ -273,7 +273,10 @@ new QRCode(document.getElementById("qrcode"), {
 function abrir(){
 document.getElementById("overlay").style.display = "none";
 document.getElementById("contenido").classList.remove("hidden");
-document.getElementById("musica").play();
+
+const musica = document.getElementById("musica");
+musica.volume = 0.6;
+musica.play().catch(()=>{});
 }
 
 /* CORAZONES */

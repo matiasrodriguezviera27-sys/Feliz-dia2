@@ -20,155 +20,279 @@ box-sizing:border-box;
 }
 
 body{
+
 font-family:Montserrat,sans-serif;
+
 background:linear-gradient(180deg,#fff,#fdeff4);
+
 color:#444;
+
 }
 
 .hero{
+
 padding:35px;
+
 text-align:center;
+
 }
 
 .hero h1{
+
 font-family:'Great Vibes',cursive;
+
 font-size:60px;
+
 color:#e76a8a;
+
 }
 
 .hero p{
+
 margin-top:10px;
+
 font-size:20px;
+
 color:#666;
+
 }
 
 .contenedor{
+
 width:95%;
+
 max-width:1300px;
+
 margin:auto;
+
 padding:30px;
+
 }
 
 .card{
+
 background:white;
+
 border-radius:20px;
+
 box-shadow:0 8px 25px rgba(0,0,0,.1);
+
 padding:25px;
+
 }
 
 .flex{
+
 display:flex;
+
 gap:35px;
+
 align-items:center;
+
 justify-content:center;
+
 flex-wrap:wrap;
+
 }
 
 .fotos{
+
 flex:1;
+
 display:flex;
+
 justify-content:center;
+
 gap:20px;
+
 flex-wrap:wrap;
+
 }
 
 .fotos img{
+
 width:320px;
+
 max-width:100%;
+
 height:auto;
+
 border-radius:18px;
+
 border:5px solid white;
+
 box-shadow:0 8px 20px rgba(0,0,0,.15);
+
 transition:.3s;
+
 }
 
 .fotos img:hover{
+
 transform:scale(1.04);
+
 }
 
 .frases{
+
 flex:1;
+
 font-size:20px;
+
 line-height:1.9;
+
 }
 
 .frases p{
+
 margin-bottom:18px;
+
+}
+
+.frases span{
+
+font-size:28px;
+
 }
 
 .qr{
+
 margin-top:45px;
+
 text-align:center;
+
 }
 
 .qr h2{
+
 margin-bottom:20px;
+
 color:#e76a8a;
+
 }
 
 .btn{
+
 display:inline-block;
+
 margin-top:15px;
+
 padding:12px 22px;
+
 background:#e76a8a;
+
 color:white;
+
 text-decoration:none;
+
 border-radius:30px;
+
 font-weight:bold;
+
 transition:.3s;
+
 }
 
 .btn:hover{
+
 background:#d45778;
+
 }
 
 @media(max-width:850px){
-.hero h1{font-size:48px;}
-.flex{flex-direction:column;}
-.frases{font-size:18px;text-align:center;}
-.fotos img{width:45%;}
+
+.hero h1{
+
+font-size:48px;
+
+}
+
+.flex{
+
+flex-direction:column;
+
+}
+
+.frases{
+
+font-size:18px;
+
+text-align:center;
+
+}
+
+.fotos img{
+
+width:45%;
+
+}
+
 }
 
 @media(max-width:500px){
-.fotos img{width:100%;}
-.hero h1{font-size:40px;}
+
+.fotos img{
+
+width:100%;
+
+}
+
+.hero h1{
+
+font-size:40px;
+
+}
+
 }
 
 </style>
+
 </head>
 
 <body>
 
 <div class="hero">
+
 <h1>Feliz día, BeBe ❤️</h1>
+
 <p>Una pequeña sorpresa para ti</p>
+
 </div>
 
 <div class="contenedor">
+
 <div class="card">
 
 <div class="flex">
 
 <div class="fotos">
+
 <img src="Verónica/vero01.jpeg">
+
 <img src="Verónica/vero02.jpeg">
+
 </div>
 
 <div class="frases">
+
 <p>❤️ Cada día a tu lado es mi lugar favorito.</p>
+
 <p>❤️ No hay palabras suficientes para explicar lo importante que sos en mi vida.</p>
+
 <p>❤️ Gracias por cada momento, por cada sonrisa, por tu amor incondicional y por estar siempre a mi lado.</p>
+
 <p>❤️ Gracias por estar conmigo y ayudarme, te quiero muchísimo.</p>
+
 <p>❤️ Gracias por hacer mi vida más bonita, por elegirme y por construir juntos nuestros sueños.</p>
-</div>
 
 </div>
 
+</div>
 <div class="qr">
 
 <h2>Escanea para abrir la página 📱</h2>
 
-<img src="qr.png" alt="QR" style="width:180px;height:180px;border-radius:10px;">
+<div id="qrcode"></div>
 
 <p style="margin-top:15px;color:#666;">
 O abrí la página desde tu celular:
@@ -187,7 +311,31 @@ Abrir página
 </div>
 
 </div>
+
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+
+<script>
+
+new QRCode(document.getElementById("qrcode"),{
+
+text:"https://feliz-dia2.vercel.app/",
+
+width:180,
+
+height:180,
+
+colorDark:"#000000",
+
+colorLight:"#ffffff",
+
+correctLevel:QRCode.CorrectLevel.H
+
+});
+
+</script>
+
 </body>
+
 </html>

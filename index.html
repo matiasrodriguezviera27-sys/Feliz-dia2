@@ -6,336 +6,225 @@
 
 <title>Feliz día, BeBe ❤️</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
 body{
-
+margin:0;
 font-family:Montserrat,sans-serif;
-
 background:linear-gradient(180deg,#fff,#fdeff4);
-
-color:#444;
-
+overflow-x:hidden;
 }
 
-.hero{
-
-padding:35px;
-
-text-align:center;
-
-}
-
-.hero h1{
-
-font-family:'Great Vibes',cursive;
-
-font-size:60px;
-
-color:#e76a8a;
-
-}
-
-.hero p{
-
-margin-top:10px;
-
-font-size:20px;
-
-color:#666;
-
-}
-
-.contenedor{
-
-width:95%;
-
-max-width:1300px;
-
-margin:auto;
-
-padding:30px;
-
-}
-
-.card{
-
-background:white;
-
-border-radius:20px;
-
-box-shadow:0 8px 25px rgba(0,0,0,.1);
-
-padding:25px;
-
-}
-
-.flex{
-
+/* CARTA INICIAL */
+.overlay{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.6);
 display:flex;
-
-gap:35px;
-
 align-items:center;
-
 justify-content:center;
-
-flex-wrap:wrap;
-
+z-index:999;
 }
 
-.fotos{
-
-flex:1;
-
-display:flex;
-
-justify-content:center;
-
-gap:20px;
-
-flex-wrap:wrap;
-
-}
-
-.fotos img{
-
-width:320px;
-
-max-width:100%;
-
-height:auto;
-
-border-radius:18px;
-
-border:5px solid white;
-
-box-shadow:0 8px 20px rgba(0,0,0,.15);
-
-transition:.3s;
-
-}
-
-.fotos img:hover{
-
-transform:scale(1.04);
-
-}
-
-.frases{
-
-flex:1;
-
-font-size:20px;
-
-line-height:1.9;
-
-}
-
-.frases p{
-
-margin-bottom:18px;
-
-}
-
-.frases span{
-
-font-size:28px;
-
-}
-
-.qr{
-
-margin-top:45px;
-
+.carta{
+background:white;
+padding:40px;
+border-radius:20px;
 text-align:center;
-
+max-width:400px;
+box-shadow:0 10px 30px rgba(0,0,0,.2);
 }
 
-.qr h2{
-
-margin-bottom:20px;
-
+.carta h1{
+font-family:'Great Vibes',cursive;
 color:#e76a8a;
-
 }
 
+/* BOTON */
 .btn{
-
+margin-top:20px;
 display:inline-block;
-
-margin-top:15px;
-
 padding:12px 22px;
-
 background:#e76a8a;
-
 color:white;
-
-text-decoration:none;
-
+border:none;
 border-radius:30px;
-
-font-weight:bold;
-
-transition:.3s;
-
+cursor:pointer;
 }
 
-.btn:hover{
-
-background:#d45778;
-
-}
-
-@media(max-width:850px){
-
-.hero h1{
-
-font-size:48px;
-
-}
-
-.flex{
-
-flex-direction:column;
-
-}
-
-.frases{
-
-font-size:18px;
-
+/* HERO */
+.hero{
 text-align:center;
-
-}
-
-.fotos img{
-
-width:45%;
-
-}
-
-}
-
-@media(max-width:500px){
-
-.fotos img{
-
-width:100%;
-
+padding:30px;
 }
 
 .hero h1{
-
-font-size:40px;
-
+font-family:'Great Vibes',cursive;
+font-size:55px;
+color:#e76a8a;
 }
 
+/* CONTADOR */
+.counter{
+text-align:center;
+font-size:18px;
+margin-top:10px;
+color:#666;
+}
+
+/* CARD */
+.card{
+max-width:1200px;
+margin:30px auto;
+background:white;
+border-radius:20px;
+padding:25px;
+box-shadow:0 8px 25px rgba(0,0,0,.1);
+}
+
+/* FLEX */
+.flex{
+display:flex;
+flex-wrap:wrap;
+gap:30px;
+justify-content:center;
+align-items:center;
+}
+
+/* POLAROIDS */
+.polaroid{
+background:white;
+padding:10px 10px 25px;
+box-shadow:0 8px 20px rgba(0,0,0,.2);
+border-radius:6px;
+transform:rotate(-3deg);
+transition:.3s;
+}
+
+.polaroid:nth-child(2){
+transform:rotate(3deg);
+}
+
+.polaroid img{
+width:280px;
+border-radius:4px;
+}
+
+.polaroid:hover{
+transform:scale(1.05);
+}
+
+/* FRASES */
+.frases{
+max-width:400px;
+font-size:18px;
+line-height:1.7;
+}
+
+/* CORAZONES */
+.heart{
+position:fixed;
+top:-10px;
+font-size:20px;
+color:#ff5e8a;
+animation:fall linear forwards;
+opacity:.7;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh);
+opacity:0;
+}
 }
 
 </style>
-
 </head>
 
 <body>
 
-<div class="hero">
-
-<h1>Feliz día, BeBe ❤️</h1>
-
-<p>Una pequeña sorpresa para ti</p>
-
+<!-- CARTA INICIAL -->
+<div class="overlay" id="overlay">
+  <div class="carta">
+    <h1>💌 Para vos</h1>
+    <p>Hay una sorpresa especial esperándote…</p>
+    <button class="btn" onclick="abrir()">Abrime ❤️</button>
+  </div>
 </div>
 
-<div class="contenedor">
+<!-- MUSICA -->
+<audio id="musica" loop>
+  <source src="musica.mp3" type="audio/mpeg">
+</audio>
 
+<!-- HERO -->
+<div class="hero">
+  <h1>Feliz día, BeBe ❤️</h1>
+  <div class="counter" id="counter"></div>
+</div>
+
+<!-- CONTENIDO -->
 <div class="card">
 
 <div class="flex">
 
-<div class="fotos">
+  <div class="polaroid">
+    <img src="Verónica/vero01.jpeg">
+  </div>
 
-<img src="Verónica/vero01.jpeg">
+  <div class="polaroid">
+    <img src="Verónica/vero02.jpeg">
+  </div>
 
-<img src="Verónica/vero02.jpeg">
-
-</div>
-
-<div class="frases">
-
-<p>❤️ Cada día a tu lado es mi lugar favorito.</p>
-
-<p>❤️ No hay palabras suficientes para explicar lo importante que sos en mi vida.</p>
-
-<p>❤️ Gracias por cada momento, por cada sonrisa, por tu amor incondicional y por estar siempre a mi lado.</p>
-
-<p>❤️ Gracias por estar conmigo y ayudarme, te quiero muchísimo.</p>
-
-<p>❤️ Gracias por hacer mi vida más bonita, por elegirme y por construir juntos nuestros sueños.</p>
-
-</div>
-
-</div>
-<div class="qr">
-
-<h2>Escanea para abrir la página 📱</h2>
-
-<div id="qrcode"></div>
-
-<p style="margin-top:15px;color:#666;">
-O abrí la página desde tu celular:
-</p>
-
-<p>
-<a href="https://feliz-dia2.vercel.app/" target="_blank">
-https://feliz-dia2.vercel.app/
-</a>
-</p>
-
-<a class="btn" href="https://feliz-dia2.vercel.app/" target="_blank">
-Abrir página
-</a>
+  <div class="frases">
+    <p>❤️ Cada día a tu lado es mi lugar favorito.</p>
+    <p>❤️ No hay palabras suficientes para lo que siento por vos.</p>
+    <p>❤️ Gracias por estar siempre.</p>
+    <p>❤️ Te quiero muchísimo.</p>
+  </div>
 
 </div>
 
 </div>
 
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
-
+<!-- CORAZONES GENERADOR -->
 <script>
+function crearCorazon(){
+const heart = document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML = "❤️";
+heart.style.left = Math.random() * 100 + "vw";
+heart.style.animationDuration = (2 + Math.random() * 3) + "s";
+document.body.appendChild(heart);
 
-new QRCode(document.getElementById("qrcode"),{
+setTimeout(() => heart.remove(), 5000);
+}
 
-text:"https://feliz-dia2.vercel.app/",
+setInterval(crearCorazon, 300);
 
-width:180,
+/* ABRIR CARTA */
+function abrir(){
+document.getElementById("overlay").style.display = "none";
+document.getElementById("musica").play();
+}
 
-height:180,
+/* CONTADOR DE RELACIÓN */
+const inicio = new Date("2023-01-01"); // 👈 CAMBIA ESTA FECHA
+const counter = document.getElementById("counter");
 
-colorDark:"#000000",
+function actualizar(){
+const ahora = new Date();
+const diff = ahora - inicio;
 
-colorLight:"#ffffff",
+const dias = Math.floor(diff / (1000*60*60*24));
+counter.innerHTML = `❤️ Llevamos ${dias} días juntos`;
+}
 
-correctLevel:QRCode.CorrectLevel.H
-
-});
-
+actualizar();
+setInterval(actualizar, 86400000);
 </script>
 
 </body>
-
 </html>

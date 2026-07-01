@@ -17,6 +17,12 @@ background: linear-gradient(180deg, #ffe6f0, #fff0f5);
 overflow-x:hidden;
 }
 
+/* BLOQUEO CUANDO LA CARTA ESTÁ ABIERTA */
+body.locked{
+overflow:hidden;
+height:100vh;
+}
+
 /* CARTA INICIAL */
 .overlay{
 position:fixed;
@@ -72,7 +78,7 @@ margin-top:10px;
 color:#666;
 }
 
-/* CARD */
+/* CARD (FONDO SUAVE SIN BLANCO DURO) */
 .card{
 max-width:1200px;
 margin:30px auto;
@@ -123,7 +129,7 @@ font-size:18px;
 line-height:1.7;
 }
 
-/* FIRMA ANIMADA */
+/* FIRMA */
 .firma{
 margin-top:25px;
 text-align:center;
@@ -153,7 +159,7 @@ to{opacity:1;}
 50%{transform:scale(1.15);}
 }
 
-/* CORAZONES */
+/* CORAZONES FLOTANTES */
 .heart{
 position:fixed;
 top:-10px;
@@ -183,7 +189,7 @@ color:#e76a8a;
 </style>
 </head>
 
-<body>
+<body class="locked">
 
 <!-- CARTA -->
 <div class="overlay" id="overlay">
@@ -259,10 +265,12 @@ new QRCode(document.getElementById("qrcode"), {
   correctLevel: QRCode.CorrectLevel.H
 });
 
-/* CARTA */
+/* ABRIR CARTA */
 function abrir(){
 document.getElementById("overlay").style.display = "none";
 document.getElementById("musica").play();
+
+document.body.classList.remove("locked");
 }
 
 /* CORAZONES */
